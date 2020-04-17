@@ -2,16 +2,16 @@ unsorted_list = [7, 3, 9, 2, 8, 4, 1, 5, 6]
 
 
 def insertion_sort(num_list):
-	# Outer loop starts on the second element of the list
+	# We don't need to consider the index 0 because there isn't any number on the left
 	for i in range(1, len(num_list)):
-		# The inner loop start on i-1 and iterate backwards
-		for j in range(i - 1, -1, -1):
-			# If the item on the right is less than the item on the left
-			if num_list[j] > num_list[j + 1]:
-				num_list[j], num_list[j + 1] = num_list[j + 1], num_list[j]
-			# If not break the inner loop
-			else:
-				break
+		# store the current value to sort
+		value_to_sort = num_list[i]
+
+		# While there are greater values on the left
+		while num_list[i - 1] > value_to_sort and i > 0:
+			# switch the values
+			num_list[i], num_list[i - 1] = num_list[i - 1], num_list[i]
+			i -= 1
 
 	return num_list
 

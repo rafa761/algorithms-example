@@ -2,14 +2,21 @@ unsorted_list = [7, 3, 9, 2, 8, 4, 1, 5, 6]
 
 
 def bubble_sort(num_list):
-	# Outer loop
-	for i in range(0, len(num_list) - 1):
-		# The inner loop iterate over the list to compare
-		for j in range(0, len(num_list) - 1 - i):
-			# Compare the numbers
-			if num_list[j] > num_list[j + 1]:
-				# swap if it is necessary
-				num_list[j], num_list[j + 1] = num_list[j + 1], num_list[j]
+	# We can't compare the number after que last index, so we use len-1 because there's no number there
+	indexing_length = len(num_list) - 1
+	sorted = False  # variable to be used inside of the control flow to know when the list is sorted
+
+	# we need to perform an unknown number of iterations
+	while not sorted:
+		sorted = True
+
+		for i in range(0, indexing_length):
+			# If the number on the left is greater than the number on the right
+			if num_list[i] > num_list[i + 1]:
+				sorted = False
+
+				# Switch elements
+				num_list[i], num_list[i + 1] = num_list[i + 1], num_list[i]
 
 	return num_list
 
