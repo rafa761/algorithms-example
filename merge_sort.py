@@ -1,4 +1,6 @@
 unsorted_list = [7, 3, 9, 2, 8, 4, 1, 5, 6]
+sorted_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reverse_list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 
 def merge_sort(num_list):
@@ -40,5 +42,16 @@ def merge(left_list, right_list):
 
 
 if __name__ == '__main__':
+	print('-=' * 5, 'Sorted List', '-=' * 5)
+	print('Before:', sorted_list)
+	print('After: ', merge_sort(sorted_list))
+	print('\n')
+
+	print('-=' * 5, 'Reverse List', '-=' * 5)
+	print('Before:', reverse_list)
+	print('After: ', merge_sort(reverse_list))
+	print('\n')
+
+	print('-=' * 5, 'Unsorted List', '-=' * 5)
 	print('Before:', unsorted_list)
 	print('After: ', merge_sort(unsorted_list))
